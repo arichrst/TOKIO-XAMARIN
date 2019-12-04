@@ -1,0 +1,17 @@
+D:\TOKIO\Tokio\Tokio\Tokio\bin\Debug\netstandard2.0\Tokio.deps.json
+D:\TOKIO\Tokio\Tokio\Tokio\bin\Debug\netstandard2.0\Tokio.dll
+D:\TOKIO\Tokio\Tokio\Tokio\bin\Debug\netstandard2.0\ref\Tokio.dll
+D:\TOKIO\Tokio\Tokio\Tokio\bin\Debug\netstandard2.0\Tokio.pdb
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Tokio.csprojAssemblyReference.cache
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Tokio.AssemblyInfoInputs.cache
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Tokio.AssemblyInfo.cs
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\XamlC.stamp
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Tokio.dll
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\ref\Tokio.dll
+D:\TOKIO\Tokio\Tokio\Tokio\obj\Debug\netstandard2.0\Tokio.pdb
