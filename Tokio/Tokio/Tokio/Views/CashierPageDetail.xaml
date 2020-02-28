@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Tokio.Views"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	         xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             BackgroundColor="{StaticResource Primary}"
+             x:Class="Tokio.Views.CashierPageDetail">
+    <StackLayout
+        HorizontalOptions="FillAndExpand"
+        Orientation="Vertical">
+        <StackLayout HorizontalOptions="EndAndExpand"
+                        Padding="20,20,20,20"
+                        VerticalOptions="Fill"
+                        Orientation="Vertical">
+            <ffimageloading:CachedImage HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+			                            WidthRequest="150"
+                                        HeightRequest="150"
+                                        LoadingPlaceholder="store.png"
+                                        ErrorPlaceholder="store.png"
+                                        Aspect="Fill"
+                                        Source="{Binding User.Thumbnail}"
+			                            DownsampleToViewSize="true" x:Name="Image_Profile">
+			    <ffimageloading:CachedImage.Transformations>
+				    <fftransformations:CircleTransformation/>
+			    </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+        </StackLayout>
+        <ScrollView
+            VerticalScrollBarVisibility="Never"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <ScrollView.Content>
+                <StackLayout HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"
+                             Orientation="Vertical">
+                    <FlexLayout BindableLayout.ItemsSource="{Binding Products}" 
+                           Wrap="Wrap"
+                           Direction="Row"
+                           JustifyContent="Start"
+                           AlignItems="Start"
+                           AlignContent="Start"
+                           Padding="8">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                    <local:ThumbProductItemView
+                                    Margin="4,4,4,4"
+                                    FlexLayout.Basis="{OnIdiom Phone='33.333%', Tablet='16.666%'}"
+                                    FlexLayout.AlignSelf="Start"/>
+                                
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
+        <ScrollView HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End"
+                    Orientation="Horizontal"
+                    HeightRequest="100"
+                    Padding="10">
+                         <StackLayout HorizontalOptions="EndAndExpand"
+                                      Spacing="10"
+                                      Orientation="Horizontal">
+                             <Image x:Name="Button_History"
+                                Source="scroll.png"
+                                Aspect="AspectFit"
+                                HeightRequest="80"
+                                WidthRequest="80"/>
+                            <Image x:Name="Button_Clear"
+                                    Source="eraser.png"
+                                    Aspect="AspectFit"
+                                    HeightRequest="80"
+                                    WidthRequest="80"/>
+                            <Image x:Name="Button_Cancel"
+                                Source="folder.png"
+                                Aspect="AspectFit"
+                                HeightRequest="80"
+                                WidthRequest="80"/>
+                             <Image x:Name="Button_Save"
+                                    Source="diskette.png"
+                                    Aspect="AspectFit"
+                                    HeightRequest="80"
+                                    WidthRequest="80"/>
+                            <Image x:Name="Button_Pay"
+                                    Source="wallet.png"
+                                    Aspect="AspectFit"
+                                    HeightRequest="80"
+                                    WidthRequest="80"/>
+                             <Image x:Name="Button_New"
+                                    Source="new_product.png"
+                                    Aspect="AspectFit"
+                                    HeightRequest="80"
+                                    WidthRequest="80"/>
+                         </StackLayout>
+                    </ScrollView>
+    </StackLayout>
+    
+</ContentPage>

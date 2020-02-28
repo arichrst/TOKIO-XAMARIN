@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:Tokio.Views"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	         xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             BackgroundColor="{StaticResource Primary}"
+             x:Class="Tokio.Views.CRUDStore">
+    <ContentPage.Content>
+        <ScrollView
+            VerticalScrollBarVisibility="Never"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="FillAndExpand">
+            <ScrollView.Content>
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Padding="5">
+                    <Image
+                        Source="xamarin_logo.png"
+                        Margin="25"
+                        x:Name="Image_Logo"
+                        WidthRequest="100"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+
+                    <ffimageloading:CachedImage HorizontalOptions="Center"
+                                                VerticalOptions="Center"
+			                                    WidthRequest="150"
+                                                HeightRequest="150"
+                                                LoadingPlaceholder="store.png"
+                                                ErrorPlaceholder="store.png"
+                                                Aspect="Fill"
+                                                Source="store.png"
+			                                    DownsampleToViewSize="true" x:Name="Image_Store">
+                    </ffimageloading:CachedImage>
+
+                    <Entry
+                        x:Name="Entry_Name"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.Name}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Nama Toko"
+                        MaxLength="25"
+                        Keyboard="Default"
+                        Placeholder="Nama Toko"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Entry
+                        x:Name="Entry_Address"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.Address}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Alamat"
+                        MaxLength="200"
+                        Keyboard="Default"
+                        Placeholder="Alamat"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Entry
+                        x:Name="Entry_Tax"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.Tax}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Pajak (%)"
+                        MaxLength="5"
+                        Keyboard="Numeric"
+                        Placeholder="Pajak (%)"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Entry
+                        x:Name="Entry_ServiceCharge"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.ServiceCharge}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Jasa Layanan (%)"
+                        Keyboard="Numeric"
+                        Placeholder="Jasa Layanan (%)"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Entry
+                        x:Name="Entry_ReceiptMessage"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.ReceiptMessage}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Catatan Struk"
+                        Keyboard="Default"
+                        Placeholder="Catatan Struk"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Fill"
+                        Orientation="Horizontal">
+                        <Entry
+                            x:Name="Entry_OVO"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="215"
+                            Margin="5,5,0,5"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Store.OVO}"
+                            TextColor="{StaticResource White}"
+                            d:Text="Kode OVO"
+                            Keyboard="Default"
+                            Placeholder="Kode OVO"
+                            PlaceholderColor="{StaticResource White}"/>
+                         <Image
+                            Source="scancode.png"
+                            Margin="0,5,5,5"
+                            x:Name="Image_OVO"
+                            WidthRequest="30"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Fill"
+                        Orientation="Horizontal">
+                        <Entry
+                            x:Name="Entry_GoPay"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="215"
+                            Margin="5,5,0,5"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Store.GoPay}"
+                            TextColor="{StaticResource White}"
+                            d:Text="Kode GoPay"
+                            Keyboard="Default"
+                            Placeholder="Kode GoPay"
+                            PlaceholderColor="{StaticResource White}"/>
+                         <Image
+                            Source="scancode.png"
+                            Margin="0,5,5,5"
+                            x:Name="Image_GoPay"
+                            WidthRequest="30"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Fill"
+                        Orientation="Horizontal">
+                        <Entry
+                            x:Name="Entry_LinkAja"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="215"
+                            Margin="5,5,0,5"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Store.LinkAja}"
+                            TextColor="{StaticResource White}"
+                            d:Text="Kode LinkAja"
+                            Keyboard="Default"
+                            Placeholder="Kode LinkAja"
+                            PlaceholderColor="{StaticResource White}"/>
+                         <Image
+                            Source="scancode.png"
+                            Margin="0,5,5,5"
+                            x:Name="Image_LinkAja"
+                            WidthRequest="30"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Fill"
+                        Orientation="Horizontal">
+                        <Entry
+                            x:Name="Entry_Dana"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="215"
+                            Margin="5,5,0,5"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Store.Dana}"
+                            TextColor="{StaticResource White}"
+                            d:Text="Kode Dana"
+                            Keyboard="Default"
+                            Placeholder="Kode Dana"
+                            PlaceholderColor="{StaticResource White}"/>
+                         <Image
+                            Source="scancode.png"
+                            Margin="0,5,5,5"
+                            x:Name="Image_Dana"
+                            WidthRequest="30"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <Entry
+                        x:Name="Entry_BankAccount"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.BankAccount}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Nomor Rekening"
+                        Keyboard="Numeric"
+                        Placeholder="Nomor Rekening"
+                        PlaceholderColor="{StaticResource White}"/>
+
+                    <Entry
+                        x:Name="Entry_BankAccountName"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.BankAccountName}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Nama Akun Rekening"
+                        Keyboard="Default"
+                        Placeholder="Nama Akun Rekening"
+                        PlaceholderColor="{StaticResource White}"/>
+
+                    <Entry
+                        x:Name="Entry_BankName"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.BankName}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Nama Bank"
+                        Keyboard="Default"
+                        Placeholder="Nama Bank"
+                        PlaceholderColor="{StaticResource White}"/>
+
+                    <Entry
+                        x:Name="Entry_Instagram"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.Instagram}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Link Instagram"
+                        Keyboard="Default"
+                        Placeholder="Link Instagram"
+                        PlaceholderColor="{StaticResource White}"/>
+
+                    <Entry
+                        x:Name="Entry_Facebook"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.Facebook}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Link Facebook"
+                        Keyboard="Default"
+                        Placeholder="Link Facebook"
+                        PlaceholderColor="{StaticResource White}"/>
+
+                    <Entry
+                        x:Name="Entry_Twitter"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Store.Twitter}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Link Twitter"
+                        Keyboard="Default"
+                        Placeholder="Link Twitter"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Button
+                        x:Name="Button_Submit"
+                        BackgroundColor="{StaticResource PrimaryDark}"
+                        Text="{Binding ButtonText}"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        Clicked="Submit_Clicked"
+                        TextColor="{StaticResource White}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

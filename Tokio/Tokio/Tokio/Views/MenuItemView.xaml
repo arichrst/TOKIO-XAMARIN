@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             HorizontalOptions="Center"
+             VerticalOptions="Fill"
+             HeightRequest="{Binding HeightView}"
+             WidthRequest="{Binding WidthView}"
+             BackgroundColor="{StaticResource White}"
+             x:Class="Tokio.Views.MenuItemView">
+    <ContentView.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="Fill"
+                     IsVisible="{Binding IsVisible}"
+                     Padding="15"
+                     Orientation="Vertical">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding Command}" 
+                    NumberOfTapsRequired="1"
+                 />
+            </StackLayout.GestureRecognizers>
+            <Image Source="{Binding ImageUrl}"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="5"/>
+            <Label Text="{Binding Name}"
+                    LineBreakMode="WordWrap"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource Text}"
+                    FontSize="10" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

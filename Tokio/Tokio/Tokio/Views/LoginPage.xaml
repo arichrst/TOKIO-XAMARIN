@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             BackgroundColor="{StaticResource Primary}"
+             x:Class="Tokio.Views.LoginPage">
+    <ContentPage.Content>
+        <ScrollView
+            VerticalScrollBarVisibility="Never"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="FillAndExpand">
+            <ScrollView.Content>
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Padding="5">
+                    <Image
+                        Source="xamarin_logo.png"
+                        x:Name="Image_Logo"
+                        Margin="25"
+                        WidthRequest="250"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                    <Entry
+                        x:Name="Entry_Username"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding User.Username}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Nama Pengguna"
+                        MaxLength="16"
+                        Keyboard="Default"
+                        Placeholder="Nama Pengguna"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Entry
+                        x:Name="Entry_Password"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding User.Password}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Kata Sandi"
+                        Keyboard="Default"
+                        Placeholder="Kata Sandi"
+                        IsPassword="True"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Button
+                        x:Name="Button_Login"
+                        BackgroundColor="{StaticResource PrimaryDark}"
+                        Text="Login"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        Clicked="Login_Clicked"
+                        TextColor="{StaticResource White}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                    <Label
+                        x:Name="Label_Register"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource White}"
+                        Text="Sentuh disini untuk mendaftar"
+                        Margin="25"
+                        FontSize="Micro"/>
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

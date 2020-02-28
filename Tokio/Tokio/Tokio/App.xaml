@@ -8,8 +8,19 @@
 
     <Application.Resources>
         <ResourceDictionary>
-            <!--Global Styles-->
+            <!--Color Styles-->
             <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Color x:Key="PrimaryLight">#2078cb</Color>
+            <Color x:Key="PrimaryDark">#0a3f71</Color>
+            <Color x:Key="Primary">#145a9c</Color>
+            <Color x:Key="AccentLight">#d1ccd2</Color>
+            <Color x:Key="AccentDark">#828183</Color>
+            <Color x:Key="Accent">#aaaaaa</Color>
+            <Color x:Key="Text">#7e7d7e</Color>
+            <Color x:Key="TextDisabled">#d1d0d2</Color>
+            <Color x:Key="White">#FFFFFF</Color>
+            <Color x:Key="NavigationText">#FFFFFF</Color>
+            <Color x:Key="PopupBackground">#1a1a1a</Color>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />

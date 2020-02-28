@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:Tokio.Views"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	         xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             
+             BackgroundColor="{StaticResource Primary}"
+             x:Class="Tokio.Views.RegisterPage">
+    <ContentPage.Content>
+        <ScrollView
+            VerticalScrollBarVisibility="Never"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="FillAndExpand">
+            <ScrollView.Content>
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Padding="5">
+                    <Image
+                        Source="xamarin_logo.png"
+                        Margin="25"
+                        x:Name="Image_Logo"
+                        WidthRequest="100"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+
+                    <ffimageloading:CachedImage HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+			                                        WidthRequest="150"
+                                                    HeightRequest="150"
+                                                    LoadingPlaceholder="user.png"
+                                                    ErrorPlaceholder="user.png"
+                                                    Aspect="Fill"
+                                                    Source="user.png"
+			                                        DownsampleToViewSize="true" x:Name="Image_Profile">
+			                <ffimageloading:CachedImage.Transformations>
+				                <fftransformations:CircleTransformation/>
+			                </ffimageloading:CachedImage.Transformations>
+                        </ffimageloading:CachedImage>
+
+                    <Entry
+                        x:Name="Entry_Name"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding User.Name}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Nama Lengkap"
+                        MaxLength="25"
+                        Keyboard="Default"
+                        Placeholder="Nama Lengkap"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Entry
+                        x:Name="Entry_Phone"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding User.Phone}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Nomor Telepon"
+                        MaxLength="25"
+                        Keyboard="Telephone"
+                        Placeholder="Nomor Telepon"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Entry
+                        x:Name="Entry_Username"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding User.Username}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Nama Pengguna"
+                        MaxLength="16"
+                        Keyboard="Default"
+                        Placeholder="Nama Pengguna"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Entry
+                        x:Name="Entry_Password"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding User.Password}"
+                        TextColor="{StaticResource White}"
+                        d:Text="Kata Sandi"
+                        Keyboard="Default"
+                        Placeholder="Kata Sandi"
+                        IsPassword="True"
+                        PlaceholderColor="{StaticResource White}"/>
+                    <Button
+                        x:Name="Button_Submit"
+                        BackgroundColor="{StaticResource PrimaryDark}"
+                        Text="Submit"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        Clicked="Submit_Clicked"
+                        TextColor="{StaticResource White}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                    <Label
+                        x:Name="Label_Login"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource White}"
+                        Text="Sentuh disini jika sudah mempunyai akun"
+                        Margin="25"
+                        FontSize="Micro"/>
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

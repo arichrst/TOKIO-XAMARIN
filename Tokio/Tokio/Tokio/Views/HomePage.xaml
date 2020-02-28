@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:Tokio.Views"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	         xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             BackgroundColor="{StaticResource Primary}"
+             x:Class="Tokio.Views.HomePage">
+    <ContentPage.Content>
+        <ScrollView
+            VerticalScrollBarVisibility="Never"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="FillAndExpand">
+            <ScrollView.Content>
+                <StackLayout HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="Fill"
+                             Orientation="Vertical">
+                    <StackLayout HorizontalOptions="CenterAndExpand"
+                                 VerticalOptions="Fill"
+                                 Padding="0,30,0,0"
+                                 Orientation="Vertical">
+                        <ffimageloading:CachedImage HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+			                                        WidthRequest="200"
+                                                    HeightRequest="200"
+                                                    LoadingPlaceholder="user.png"
+                                                    ErrorPlaceholder="user.png"
+                                                    Aspect="Fill"
+                                                    Source="{Binding User.Thumbnail}"
+			                                        DownsampleToViewSize="true" x:Name="Image_Profile">
+			                <ffimageloading:CachedImage.Transformations>
+				                <fftransformations:CircleTransformation/>
+			                </ffimageloading:CachedImage.Transformations>
+                        </ffimageloading:CachedImage>
+                        <Label Text="{Binding User.Name}"
+                               x:Name="Label_Name"
+                               LineBreakMode="WordWrap"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource White}"
+                               FontSize="30" />
+                        <Label Text="{Binding Store.Name}"
+                               x:Name="Label_Description"
+                               LineBreakMode="WordWrap"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="Center"
+                               TextColor="{StaticResource White}"
+                               FontSize="13" />
+                    </StackLayout>
+                    <FlexLayout BindableLayout.ItemsSource="{Binding Menus}" 
+                           Wrap="Wrap"
+                           Direction="Row"
+                           JustifyContent="Start"
+                           AlignItems="Start"
+                           AlignContent="Start"
+                           Padding="8">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <local:MenuItemView
+                                    Margin="4,4,4,4"
+                                    FlexLayout.Basis="{OnIdiom Phone='33.333%', Tablet='16.666%'}"
+                                    FlexLayout.AlignSelf="Start"/>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	         xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             HorizontalOptions="Center"
+             VerticalOptions="Fill"
+             BackgroundColor="{StaticResource White}"
+             x:Class="Tokio.Views.CashierItemView">
+    <ContentView.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Fill"
+                     IsVisible="{Binding IsVisible}"
+                     Padding="5"
+                     x:Name="Content"
+                     Orientation="Horizontal">
+            <ffimageloading:CachedImage HorizontalOptions="Fill"
+                                        VerticalOptions="Center"
+			                            WidthRequest="70"
+                                        HeightRequest="70"
+                                        Margin="2,2,2,2"
+                                        LoadingPlaceholder="store.png"
+                                        ErrorPlaceholder="store.png"
+                                        Aspect="AspectFit"
+                                        Source="{Binding ImageUrl}"
+			                            DownsampleToViewSize="true">
+			    <ffimageloading:CachedImage.Transformations>
+				    <fftransformations:CircleTransformation/>
+			    </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Center"
+                         Orientation="Vertical">
+                <Label Text="{Binding ProductName}"
+                    LineBreakMode="TailTruncation"
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Fill"
+                    TextColor="{StaticResource Text}"
+                    FontSize="10" />
+                <Label Text="{Binding ItemInfo}"
+                        HorizontalTextAlignment="Start"
+                        HorizontalOptions="Fill"
+                        TextColor="{StaticResource Text}"
+                        FontSize="10" />
+                <Label Text="{Binding TotalFormated}"
+                        HorizontalTextAlignment="End"
+                        HorizontalOptions="End"
+                        TextColor="{StaticResource PrimaryLight}"
+                        FontAttributes="Bold"
+                        FontSize="12" />
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

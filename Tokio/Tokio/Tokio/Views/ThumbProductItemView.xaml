@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	         xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             HorizontalOptions="Center"
+             VerticalOptions="FillAndExpand"
+             HeightRequest="{Binding HeightView}"
+             WidthRequest="{Binding WidthView}"
+             BackgroundColor="{StaticResource White}"
+             x:Class="Tokio.Views.ThumbProductItemView">
+    <ContentView.Content>
+        <StackLayout HorizontalOptions="Center"
+                     VerticalOptions="Fill"
+                     IsVisible="{Binding IsVisible}"
+                     Padding="5"
+                     Spacing="1"
+                     x:Name="Content"
+                     Orientation="Vertical">
+            <ffimageloading:CachedImage HorizontalOptions="Center"
+                                        WidthRequest="100"
+                                        HeightRequest="100"
+                                        VerticalOptions="Start"
+                                        LoadingPlaceholder="store.png"
+                                        ErrorPlaceholder="store.png"
+                                        Aspect="AspectFit"
+                                        Source="{Binding ImageUrl}"
+			                            DownsampleToViewSize="true">
+			    <ffimageloading:CachedImage.Transformations>
+				    <fftransformations:CircleTransformation/>
+			    </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+            <Label Text="{Binding Name}"
+                    LineBreakMode="WordWrap"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource Text}"
+                    FontSize="9" />
+            <Label Text="{Binding PriceFormatted}"
+                    LineBreakMode="WordWrap"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource Text}"
+                    FontAttributes="Bold"
+                    FontSize="10" />
+            <Label Text="{Binding MemberPriceFormatted}"
+                    LineBreakMode="WordWrap"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource PrimaryLight}"
+                    FontAttributes="Bold"
+                    FontSize="10" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

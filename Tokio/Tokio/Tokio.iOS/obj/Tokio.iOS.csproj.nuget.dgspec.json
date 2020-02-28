@@ -1,39 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TOKIO\\Tokio\\Tokio\\Tokio.iOS\\Tokio.iOS.csproj": {}
+    "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio.iOS/Tokio.iOS.csproj": {}
   },
   "projects": {
-    "D:\\TOKIO\\Tokio\\Tokio\\Tokio.iOS\\Tokio.iOS.csproj": {
+    "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio.iOS/Tokio.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TOKIO\\Tokio\\Tokio\\Tokio.iOS\\Tokio.iOS.csproj",
+        "projectUniqueName": "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio.iOS/Tokio.iOS.csproj",
         "projectName": "Tokio.iOS",
-        "projectPath": "D:\\TOKIO\\Tokio\\Tokio\\Tokio.iOS\\Tokio.iOS.csproj",
-        "packagesPath": "C:\\Users\\Ucing Mobile\\.nuget\\packages\\",
-        "outputPath": "D:\\TOKIO\\Tokio\\Tokio\\Tokio.iOS\\obj\\",
+        "projectPath": "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio.iOS/Tokio.iOS.csproj",
+        "packagesPath": "/Users/sibtech/.nuget/packages/",
+        "outputPath": "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio.iOS/obj/",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ucing Mobile\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/sibtech/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "xamarinios10"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "D:\\TOKIO\\Tokio\\Tokio\\Tokio\\Tokio.csproj": {
-                "projectPath": "D:\\TOKIO\\Tokio\\Tokio\\Tokio\\Tokio.csproj"
+              "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio/Tokio.csproj": {
+                "projectPath": "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio/Tokio.csproj"
               }
             }
           }
@@ -42,9 +36,17 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.0.30, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[11.0.2, )"
+            },
+            "Xamanimation": {
+              "target": "Package",
+              "version": "[1.3.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -69,29 +71,25 @@
         }
       }
     },
-    "D:\\TOKIO\\Tokio\\Tokio\\Tokio\\Tokio.csproj": {
+    "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio/Tokio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TOKIO\\Tokio\\Tokio\\Tokio\\Tokio.csproj",
+        "projectUniqueName": "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio/Tokio.csproj",
         "projectName": "Tokio",
-        "projectPath": "D:\\TOKIO\\Tokio\\Tokio\\Tokio\\Tokio.csproj",
-        "packagesPath": "C:\\Users\\Ucing Mobile\\.nuget\\packages\\",
-        "outputPath": "D:\\TOKIO\\Tokio\\Tokio\\Tokio\\obj\\",
+        "projectPath": "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio/Tokio.csproj",
+        "packagesPath": "/Users/sibtech/.nuget/packages/",
+        "outputPath": "/Users/sibtech/Documents/GitHub/TOKIO-XAMARIN/Tokio/Tokio/Tokio/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ucing Mobile\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/sibtech/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -108,6 +106,18 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.0.30, )"
+            },
+            "FirebaseDatabase.net": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
+            "FirebaseStorage.net": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -118,13 +128,49 @@
               "target": "Package",
               "version": "[11.0.2, )"
             },
+            "Plugin.Permissions": {
+              "target": "Package",
+              "version": "[3.0.0.12, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.2.0.223, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.0.1.1, )"
+            },
+            "Xamanimation": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.2.0, )"
             },
+            "Xamarin.FFImageLoading": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
+            "Xamarin.FFImageLoading.Transformations": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.2.0.709249, )"
+            },
+            "ZXing.Net.Mobile": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "ZXing.Net.Mobile.Forms": {
+              "target": "Package",
+              "version": "[2.4.1, )"
             }
           },
           "imports": [
@@ -137,7 +183,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

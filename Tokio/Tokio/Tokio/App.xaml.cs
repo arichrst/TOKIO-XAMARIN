@@ -4,27 +4,24 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Tokio.Services;
 using Tokio.Views;
+using Tokio.Models;
 
 namespace Tokio
 {
     public partial class App : Application
     {
-        //TODO: Replace with *.azurewebsites.net url after deploying backend to Azure
-        //To debug on Android emulators run the web backend against .NET Core not IIS
-        //If using other emulators besides stock Google images you may need to adjust the IP address
-        public static string AzureBackendUrl =
-            DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
-        public static bool UseMockDataStore = true;
+        public static CashierPage Cashier { get; set; }
+        public static Store MyStore { get; set; }
+        public static int ScreenHeight { get; set; }
+        public static int ScreenWidth { get; set; }
 
         public App()
         {
             InitializeComponent();
-
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
+            if (new User().LoadProfile() == null)
+                MainPage = new LoginPage();
             else
-                DependencyService.Register<AzureDataStore>();
-            MainPage = new MainPage();
+                MainPage = new NavigationPage(new StorePage()) ;
         }
 
         protected override void OnStart()

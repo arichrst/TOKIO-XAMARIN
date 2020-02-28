@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{B6FE27F8-4A14-4B02-BB8B-22CF4AC05CCD}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.ItemProperties.Tokio.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tokio/Tokio/Views/CashierPageDetail.xaml.cs">
+    <Files>
+      <File FileName="Tokio/Tokio/Views/CashierPageDetail.xaml.cs" Line="41" Column="28" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Tokio" expanded="True">
+            <Node name="Tokio" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="CashierPage.xaml" expanded="True" />
+                <Node name="CashierPageDetail.xaml" expanded="True">
+                  <Node name="CashierPageDetail.xaml.cs" selected="True" />
+                </Node>
+                <Node name="HomePage.xaml" expanded="True" />
+                <Node name="InputQtyPopup.xaml" expanded="True" />
+                <Node name="LoginPage.xaml" expanded="True" />
+                <Node name="ThumbProductItemView.xaml" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Tokio.Android" expanded="True">
+              <Node name="Assets" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Tokio.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             BackgroundColor="{StaticResource Primary}"
+             x:Class="Tokio.Views.StorePage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     Orientation="Vertical">
+            <ScrollView
+                x:Name="Scroll_Empty"
+                VerticalScrollBarVisibility="Never"
+                IsVisible="{Binding EmptyListVisible}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="FillAndExpand">
+                <ScrollView.Content>
+                    <StackLayout HorizontalOptions="CenterAndExpand"
+                                 VerticalOptions="CenterAndExpand"
+                                 Padding="30"
+                                 Orientation="Vertical">
+                        <Image WidthRequest="300"
+                               x:Name="Image_Store"
+                               Margin="20,20,20,20"
+                               Source="store.png"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                        <Label Text="Yuhuuu"
+                               LineBreakMode="WordWrap"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource White}"
+                               FontSize="36" />
+                        <Label Text="Kamu belum memiliki toko, ayo buat sekarang"
+                               x:Name="Label_Description"
+                               LineBreakMode="WordWrap"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="Center"
+                               TextColor="{StaticResource White}"
+                               FontSize="13" />
+                    </StackLayout>
+                </ScrollView.Content>
+            </ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Fill"
+                         Padding="20"
+                         IsVisible="{Binding ListVisible}"
+                         x:Name="Layout_Header"
+                         Orientation="Vertical">
+                <Image WidthRequest="250"
+                       x:Name="Image_Logo"
+                       Source="xamarin_logo.png"
+                       HorizontalOptions="Center"
+                       Margin="20"/>
+                <Label Text="Pilih salah satu toko yang akan dioperasikan"
+                               LineBreakMode="WordWrap"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="Center"
+                               TextColor="{StaticResource White}"
+                               FontSize="13" />
+            </StackLayout>
+            <ListView x:Name="StoreListView"
+                    ItemsSource="{Binding Stores}"
+                      Margin="50,0,50,0"
+                    VerticalOptions="FillAndExpand"
+                    HasUnevenRows="true"
+                      VerticalScrollBarVisibility="Never"
+                    IsVisible="{Binding ListVisible}"
+                    RefreshCommand="{Binding LoadDataCommand}"
+                    IsPullToRefreshEnabled="true"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    CachingStrategy="RecycleElement"
+                    ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="10,2,10,2"
+                                         Padding="10"
+                                         BackgroundColor="White"
+                                         Orientation="Horizontal"
+                                         HorizontalOptions="FillAndExpand">
+                                <Image Source="{Binding Icon}"
+                                       WidthRequest="100"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="Center"/>
+                                <StackLayout HorizontalOptions="FillAndExpand"
+                                             Orientation="Vertical"
+                                             Padding="20,20,0,20">
+                                    <Label Text="{Binding Name}" 
+                                           d:Text="{Binding Name}"
+                                           HorizontalOptions="FillAndExpand"
+                                           LineBreakMode="NoWrap"
+                                           TextColor="{StaticResource Text}"
+                                           FontSize="16" />
+                                    <Label Text="{Binding Address}" 
+                                           d:Text="{Binding Address}"
+                                           LineBreakMode="WordWrap"
+                                           TextColor="{StaticResource TextDisabled}"
+                                           FontSize="13" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         VerticalOptions="End"
+                         Padding="20">
+                <Button x:Name="Button_AddStore"
+                        BackgroundColor="{StaticResource PrimaryDark}"
+                        Text="Buat Toko"
+                        WidthRequest="250"
+                        Margin="5,5,5,5"
+                        Clicked="AddStore_Clicked"
+                        TextColor="{StaticResource White}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
